@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -19,7 +19,8 @@ let package = Package(
             exclude: [
                 "Examples",
                 "DateToolsSwift/Examples"
-            ]
+            ],
+            resources: [.copy("DateTools.bundle")]
         ),
         .testTarget(
             name: "DateToolsSwiftTests",

@@ -11,7 +11,7 @@ import Foundation
 public extension Bundle {
   
   class func dateToolsBundle() -> Bundle {
-    let url = Bundle.DateTools.url(forResource: "DateTools", withExtension: "bundle")!
+    let url = Bundle.module.url(forResource: "DateTools", withExtension: "bundle")!
     return Bundle(url: url)!
   }
 }
