@@ -134,7 +134,12 @@ class TimeAgoTests : XCTestCase {
         let ja_local: String = "昨日"
         let key: String = en_local
         let path: String = (Bundle.main.bundlePath as NSString).appendingPathComponent("DateTools.bundle/ja.lproj")
-        var _: Bundle = Bundle(path: path)!
+
+        guard let _ = Bundle(path: path) else {
+            XCTFail()
+            return
+        }
+
         let ja_result: String = NSLocalizedString(key, comment: "DateTools")
         XCTAssertEqual(ja_local, ja_result, "Could not access localizations.")
     }
