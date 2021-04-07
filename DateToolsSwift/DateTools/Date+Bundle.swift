@@ -11,8 +11,9 @@ import Foundation
 public extension Bundle {
   
   class func dateToolsBundle() -> Bundle {
-    let assetPath = Bundle(for: Constants.self).resourcePath!
-    return Bundle(path: NSString(string: assetPath).appendingPathComponent("DateTools.bundle"))!
+    // This intentionally removes localization support, as well as removing the need to bundle resources with the package
+    // Temporary until the resolution of this bug https://bugs.swift.org/browse/SR-13739
+    Bundle.main
   }
 }
 
